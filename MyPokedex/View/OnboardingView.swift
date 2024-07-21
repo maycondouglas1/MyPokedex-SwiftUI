@@ -8,48 +8,66 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @ObservedObject var viewModel: OnboardingViewModel
+    
     var body: some View {
-        VStack {
-            trainerImages
-            Spacer().frame(height: 45)
-            titleAndDescription
-            Spacer().frame(height: 24)
-            onboardingProgress
-            Spacer().frame(height: 45)
-            continueButton
+        TabView(selection: $viewModel.currentStep) {
+            ForEach(0..<viewModel.onboargingSteps.count, id: \.self) {
+                index in
+                VStack {
+                    trainerImages
+                    Spacer().frame(height: 45)
+                    titleAndDescription(
+                        title: viewModel.onboargingSteps[index].title,
+                        description: viewModel.onboargingSteps[index].description
+                    )
+                    Spacer().frame(height: 24)
+                    onboardingProgress
+                    Spacer().frame(height: 45)
+                    continueButton(buttonText: viewModel.onboargingSteps[index].buttonText)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, 
+                       maxHeight: .infinity,
+                       alignment: .bottom
+                )
+            .padding()
+            }
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, 
-               maxHeight: .infinity,
-               alignment: .bottom
-        )
-        .padding()
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
     
+    @ViewBuilder
     var trainerImages: some View {
-        ZStack {
-            Image("trainer1")
-                .offset(x: -65)
-                .background {
-                    Image("shadowTrainer1")
-                        .offset(x: -65, y: 110)
-                }
-            Image("trainer2")
-                .offset(x: 50,y: -10)
-                .background {
-                    Image("shadowTrainer2")
-                        .offset(x: 50, y: 115)
-                }
+        if viewModel.currentStep == 0 {
+            ZStack {
+                Image("trainer1")
+                    .offset(x: -65)
+                    .background {
+                        Image("shadowTrainer1")
+                            .offset(x: -65, y: 110)
+                    }
+                    
+                Image("trainer2")
+                    .offset(x: 50,y: -10)
+                    .background {
+                        Image("shadowTrainer2")
+                            .offset(x: 50, y: 115)
+                    }
+            }
+        } else {
+            Image("trainerHilda")
         }
+       
     }
     
-    var titleAndDescription: some View {
+    func titleAndDescription(title: String, description: String) -> some View {
         VStack(spacing: 16) {
-            Text("Todos os Pokémons em um só Lugar")
+            Text(viewModel.onboargingSteps[viewModel.currentStep].title)
                 .font(Font.custom("Poppins-Medium", size: 26))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color("Primary"))
             
-            Text("Acesse uma vasta lista de Pokémon detodas as gerações já feitas pela Nintendo")
+            Text(viewModel.onboargingSteps[viewModel.currentStep].description)
                 .font(Font.custom("Poppins-Regular", size: 14))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color("Secondary"))
@@ -58,25 +76,40 @@ struct OnboardingView: View {
     
     var onboardingProgress: some View {
         HStack {
-            Rectangle()
-                .frame(width: 28, height: 9)
-                .clipShape(.capsule)
-                .foregroundStyle(Color("Blue"))
+            if viewModel.currentStep == 0 {
+                Rectangle()
+                    .frame(width: 28, height: 9)
+                    .clipShape(.capsule)
+                    .foregroundStyle(Color("Blue"))
+                
+                Circle()
+                    .frame(width: 9, height: 9)
+                    .foregroundStyle(Color(.lightGray))
+            } else {
+                Circle()
+                    .frame(width: 9, height: 9)
+                    .foregroundStyle(Color(.lightGray))
+                
+                Rectangle()
+                    .frame(width: 28, height: 9)
+                    .clipShape(.capsule)
+                    .foregroundStyle(Color("Blue"))
+        
+            }
             
-            Circle()
-                .frame(width: 9, height: 9)
-                .foregroundStyle(Color(.lightGray))
         }
     }
     
-    var continueButton: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+    func continueButton(buttonText: String) -> some View {
+        Button(action: {
+            viewModel.currentStep = 1
+        }, label: {
            Rectangle()
                 .frame(height: 58)
                 .clipShape(.capsule)
                 .foregroundStyle(Color("Blue"))
                 .overlay {
-                    Text("Continuar")
+                    Text(viewModel.onboargingSteps[viewModel.currentStep].buttonText)
                         .foregroundStyle(.white)
                         .font(Font.custom("Poppins-Bold", size: 18))
                 }
@@ -86,5 +119,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(viewModel: OnboardingViewModel())
 }

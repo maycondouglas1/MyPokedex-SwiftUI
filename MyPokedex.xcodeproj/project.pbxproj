@@ -21,6 +21,8 @@
 		9769E55D2C4D5FFC0079D6D8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9769E5582C4D5FFC0079D6D8 /* Poppins-SemiBold.ttf */; };
 		9769E55E2C4D5FFC0079D6D8 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9769E5592C4D5FFC0079D6D8 /* Poppins-Medium.ttf */; };
 		9769E5612C4D62550079D6D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9769E5602C4D62550079D6D8 /* Colors.xcassets */; };
+		9769E5632C4D74D10079D6D8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5622C4D74D10079D6D8 /* OnboardingViewModel.swift */; };
+		9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5642C4D77620079D6D8 /* OnboardingStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		9769E5592C4D5FFC0079D6D8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		9769E55F2C4D60630079D6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9769E5602C4D62550079D6D8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9769E5622C4D74D10079D6D8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		9769E5642C4D77620079D6D8 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 		9769E5412C4CB2140079D6D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9769E5642C4D77620079D6D8 /* OnboardingStep.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		9769E5422C4CB2190079D6D8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9769E5622C4D74D10079D6D8 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 				9769E5442C4CB2300079D6D8 /* OnboardingView.swift in Sources */,
 				9769E4C52C4C79600079D6D8 /* ContentView.swift in Sources */,
 				9769E4C32C4C79600079D6D8 /* MyPokedexApp.swift in Sources */,
+				9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */,
+				9769E5632C4D74D10079D6D8 /* OnboardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
