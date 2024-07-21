@@ -56,6 +56,10 @@ struct OnboardingView: View {
             }
         } else {
             Image("trainerHilda")
+                .background {
+                    Image("shadowTrainerHilda")
+                        .offset(x: -10, y: 115)
+                }
         }
        
     }
