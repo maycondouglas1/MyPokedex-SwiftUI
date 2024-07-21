@@ -8,6 +8,7 @@
 import Foundation
 
 class OnboardingViewModel: ObservableObject {
+    @Published var showSplash: Bool = true
     @Published var currentStep: Int = 0
     @Published var onboargingSteps: [OnboardingStep] = [
         OnboardingStep(title: "Todos os Pokémons em um só Lugar",

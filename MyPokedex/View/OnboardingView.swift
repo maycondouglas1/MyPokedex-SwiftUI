@@ -11,29 +11,42 @@ struct OnboardingView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
-        TabView(selection: $viewModel.currentStep) {
-            ForEach(0..<viewModel.onboargingSteps.count, id: \.self) {
-                index in
-                VStack {
-                    trainerImages
-                    Spacer().frame(height: 45)
-                    titleAndDescription(
-                        title: viewModel.onboargingSteps[index].title,
-                        description: viewModel.onboargingSteps[index].description
-                    )
-                    Spacer().frame(height: 24)
-                    onboardingProgress
-                    Spacer().frame(height: 45)
-                    continueButton(buttonText: viewModel.onboargingSteps[index].buttonText)
+        ZStack {
+            if viewModel.showSplash {
+                SplashView()
+            } else {
+                TabView(selection: $viewModel.currentStep) {
+                    ForEach(0..<viewModel.onboargingSteps.count, id: \.self) {
+                        index in
+                        VStack {
+                            trainerImages
+                            Spacer().frame(height: 45)
+                            titleAndDescription(
+                                title: viewModel.onboargingSteps[index].title,
+                                description: viewModel.onboargingSteps[index].description
+                            )
+                            Spacer().frame(height: 24)
+                            onboardingProgress
+                            Spacer().frame(height: 45)
+                            continueButton(buttonText: viewModel.onboargingSteps[index].buttonText)
+                        }
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,
+                               maxHeight: .infinity,
+                               alignment: .bottom
+                        )
+                    .padding()
+                    }
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, 
-                       maxHeight: .infinity,
-                       alignment: .bottom
-                )
-            .padding()
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    self.viewModel.showSplash = false
+                }
+            }
+        }
     }
     
     @ViewBuilder
@@ -58,7 +71,7 @@ struct OnboardingView: View {
             Image("trainerHilda")
                 .background {
                     Image("shadowTrainerHilda")
-                        .offset(x: -10, y: 115)
+                        .offset(x: -15, y: 120)
                 }
         }
        
