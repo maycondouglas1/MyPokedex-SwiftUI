@@ -25,6 +25,7 @@
 		9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5642C4D77620079D6D8 /* OnboardingStep.swift */; };
 		9769E5682C4DA0420079D6D8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5672C4DA0420079D6D8 /* SplashView.swift */; };
 		97EFA43D2C4E9C2800D0627B /* LoginAndSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA43C2C4E9C2800D0627B /* LoginAndSignUpView.swift */; };
+		97EFA43F2C4EA78200D0627B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA43E2C4EA78200D0627B /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		9769E5642C4D77620079D6D8 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		9769E5672C4DA0420079D6D8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		97EFA43C2C4E9C2800D0627B /* LoginAndSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpView.swift; sourceTree = "<group>"; };
+		97EFA43E2C4EA78200D0627B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				97EFA43C2C4E9C2800D0627B /* LoginAndSignUpView.swift */,
+				97EFA43E2C4EA78200D0627B /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				9769E4C52C4C79600079D6D8 /* ContentView.swift in Sources */,
 				9769E4C32C4C79600079D6D8 /* MyPokedexApp.swift in Sources */,
 				9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */,
+				97EFA43F2C4EA78200D0627B /* SignUpView.swift in Sources */,
 				9769E5632C4D74D10079D6D8 /* OnboardingViewModel.swift in Sources */,
 				97EFA43D2C4E9C2800D0627B /* LoginAndSignUpView.swift in Sources */,
 				9769E5682C4DA0420079D6D8 /* SplashView.swift in Sources */,
