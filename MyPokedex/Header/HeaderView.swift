@@ -6,38 +6,27 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct HeaderView: View {
+struct HeaderView: ViewModifier {
+    @Environment(\.dismiss) var dismiss
     var title: String
-        @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-        
-        var body: some View {
-            HStack {
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .tint(Color("Primary"))
-                        .padding()
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .tint(Color("Primary"))
+                    }
                 }
-                
-                Spacer()
-                
-                Text(title)
-                    .font(Font.custom("Poppins-Bold", size: 18))
-                    .fontWeight(.bold)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.left")
-                    .opacity(0)
-                    .padding()
-                    .foregroundStyle(Color("Primary"))
+                ToolbarItem(placement: .principal) {
+                    Text(title)
+                        .font(Font.custom("Poppins-Bold", size: 18))
+                }
             }
-            .background(Color.white)
-        }
-}
-
-#Preview {
-    HeaderView(title: "Criar conta")
+    }
 }

@@ -18,7 +18,7 @@ struct LoginAndSignUpView: View {
                 buttons
             }
             .navigationBarBackButtonHidden()
-        .padding()
+            .padding()
         }
     }
     

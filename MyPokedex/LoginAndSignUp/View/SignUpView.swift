@@ -10,7 +10,6 @@ import SwiftUI
 struct SignUpView: View {
     var body: some View {
         VStack {
-            HeaderView(title: "Criar conta")
             Spacer().frame(height: 60)
             trainerImage
             titleAndDescription
@@ -18,6 +17,7 @@ struct SignUpView: View {
             signUpButtons
         }
         .navigationBarBackButtonHidden()
+        .modifier(HeaderView(title: "Criar conta"))
       
     }
     
