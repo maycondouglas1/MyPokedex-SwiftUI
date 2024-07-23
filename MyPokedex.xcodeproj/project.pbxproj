@@ -24,6 +24,7 @@
 		9769E5632C4D74D10079D6D8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5622C4D74D10079D6D8 /* OnboardingViewModel.swift */; };
 		9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5642C4D77620079D6D8 /* OnboardingStep.swift */; };
 		9769E5682C4DA0420079D6D8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769E5672C4DA0420079D6D8 /* SplashView.swift */; };
+		979125BD2C4F3CED00B9C9C1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979125BC2C4F3CED00B9C9C1 /* HeaderView.swift */; };
 		97EFA43D2C4E9C2800D0627B /* LoginAndSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA43C2C4E9C2800D0627B /* LoginAndSignUpView.swift */; };
 		97EFA43F2C4EA78200D0627B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA43E2C4EA78200D0627B /* SignUpView.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		9769E5622C4D74D10079D6D8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		9769E5642C4D77620079D6D8 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		9769E5672C4DA0420079D6D8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		979125BC2C4F3CED00B9C9C1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		97EFA43C2C4E9C2800D0627B /* LoginAndSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpView.swift; sourceTree = "<group>"; };
 		97EFA43E2C4EA78200D0627B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		9769E4C12C4C79600079D6D8 /* MyPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				979125BB2C4F3CCB00B9C9C1 /* Header */,
 				9769E56A2C4DB2030079D6D8 /* LoginAndSignUp */,
 				9769E5692C4DB1FC0079D6D8 /* Onboarding */,
 				9769E5662C4DA0320079D6D8 /* Splash */,
@@ -243,6 +246,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		979125BB2C4F3CCB00B9C9C1 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				979125BC2C4F3CED00B9C9C1 /* HeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9769E5442C4CB2300079D6D8 /* OnboardingView.swift in Sources */,
+				979125BD2C4F3CED00B9C9C1 /* HeaderView.swift in Sources */,
 				9769E4C52C4C79600079D6D8 /* ContentView.swift in Sources */,
 				9769E4C32C4C79600079D6D8 /* MyPokedexApp.swift in Sources */,
 				9769E5652C4D77620079D6D8 /* OnboardingStep.swift in Sources */,
