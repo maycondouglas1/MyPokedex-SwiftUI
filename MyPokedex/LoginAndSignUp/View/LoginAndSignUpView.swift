@@ -9,21 +9,21 @@ import SwiftUI
 
 struct LoginAndSignUpView: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 35) {
-                jumpButton
-                Spacer()
-                trainerImages
-                titleAndDescription
-                buttons
-            }
-            .navigationBarBackButtonHidden()
-            .padding()
+        VStack(spacing: 35) {
+            jumpButton
+            Spacer()
+            trainerImages
+            titleAndDescription
+            buttons
         }
+        .navigationBarBackButtonHidden()
+        .padding()
     }
     
     var jumpButton: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {
+            print("teste")
+        }, label: {
             HStack {
                 Text("Pular")
                     .font(Font.custom("Poppins-Medium", size: 18))

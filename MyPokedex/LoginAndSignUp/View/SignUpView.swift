@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @StateObject var viewModel = SignUpViewModel()
+    
     var body: some View {
+        
         VStack {
             Spacer().frame(height: 60)
             trainerImage
@@ -18,7 +21,6 @@ struct SignUpView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(HeaderView(title: "Criar conta"))
-      
     }
     
     var trainerImage: some View {
@@ -36,53 +38,55 @@ struct SignUpView: View {
             Text("Falta pouco para explorar esse mundo!")
                 .font(Font.custom("Poppins-Medium", size: 26))
                 .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false , vertical: true)
             
             Text("Como deseja se conectar?")
                 .font(Font.custom("Poppins-Regular", size: 14))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color("Secondary"))
+                .fixedSize(horizontal: false , vertical: true)
         }
     }
     
     var signUpAppleButton: some View {
-           NavigationLink {
-               //LoginApple
-           } label: {
-               Capsule()
-                   .stroke(Color(.lightGray), lineWidth: 2)
-                   .frame(height: 58)
-                   .overlay {
-                       HStack(spacing: 16) {
-                           Image("appleIcon")
-                           Text("Continuar com a Apple")
-                               .font(Font.custom("Poppins-Bold", size: 16))
-                               .foregroundStyle(Color("Primary"))
-                       }
-                   }
-           }
+        NavigationLink {
+            //LoginApple
+        } label: {
+            Capsule()
+                .stroke(Color(.lightGray), lineWidth: 2)
+                .frame(height: 58)
+                .overlay {
+                    HStack(spacing: 16) {
+                        Image("appleIcon")
+                        Text("Continuar com a Apple")
+                            .font(Font.custom("Poppins-Bold", size: 16))
+                            .foregroundStyle(Color("Primary"))
+                    }
+                }
+        }
     }
     
     var signUpGoogleButton: some View {
-           NavigationLink {
-               //LoginApple
-           } label: {
-               Capsule()
-                   .stroke(Color(.lightGray), lineWidth: 2)
-                   .frame(height: 58)
-                   .overlay {
-                       HStack(spacing: 16) {
-                           Image("googleIcon")
-                           Text("Continuar com o Google")
-                               .font(Font.custom("Poppins-Bold", size: 16))
-                               .foregroundStyle(Color("Primary"))
-                       }
-                   }
-           }
+        NavigationLink {
+            //LoginApple
+        } label: {
+            Capsule()
+                .stroke(Color(.lightGray), lineWidth: 2)
+                .frame(height: 58)
+                .overlay {
+                    HStack(spacing: 16) {
+                        Image("googleIcon")
+                        Text("Continuar com o Google")
+                            .font(Font.custom("Poppins-Bold", size: 16))
+                            .foregroundStyle(Color("Primary"))
+                    }
+                }
+        }
     }
     
     var signUpWithEmailButton: some View {
         NavigationLink {
-            SignUpView()
+            SignUpEmailView(viewModel: self.viewModel)
         } label: {
             Rectangle()
                 .frame(height: 58)
@@ -95,7 +99,7 @@ struct SignUpView: View {
                 }
         }
     }
-
+    
     
     var signUpButtons: some View {
         VStack(spacing: 12) {
@@ -105,7 +109,7 @@ struct SignUpView: View {
         }
         .padding(.horizontal)
     }
-
+    
 }
 
 #Preview {
